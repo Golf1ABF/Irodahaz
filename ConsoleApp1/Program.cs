@@ -9,7 +9,6 @@ class Iroda
     public int Kezdet { get; set; }
     public List<int> Ltszamok { get; set; }
 
-    // Új mező az emelet szám tárolásához
     public int EmeletSzam => Ltszamok.IndexOf(Ltszamok.Max()) + 1;
 
     public Iroda(string kod, int kezdet, List<int> ltszamok)
@@ -81,6 +80,8 @@ class Program
         {
             Console.WriteLine($"Nincs olyan cég, amely a(z) {keresettKod} kódot használja.");
         }
+
+        Console.WriteLine($"Az első iroda bérlés megtörtént: {irodak.Min(x => x.Kezdet)}");
 
     }
 
